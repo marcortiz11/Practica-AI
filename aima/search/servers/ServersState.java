@@ -4,9 +4,13 @@ import java.util.ArrayList;
 
 import aima.basic.XYLocation;
 
-public class Servers {
+public class ServersState {
     
-    private 
+    int[] petitionLoc;
+    
+    public int[] getPetitionsLoc() {
+        return petitionLoc;
+    }
     
     
 
