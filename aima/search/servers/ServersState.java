@@ -27,8 +27,12 @@ public class ServersState {
     }
     
     public ServerState getCopy() {
-		return ServerState(0,0,0,0,0,0);
+	ServersState child = new ServersState(0,0,0,0,0,0);
+	for(int i = 0; i < petitionLoc.size(); ++i){
+		child.movePetition(i,getServerID(i));
 	}
+	return child;
+    }
     
     public int getNumPetitions() {
     	return requests.size();
@@ -36,6 +40,10 @@ public class ServersState {
     
     public int getNumServers() {
     	return servers.size();
+    }
+    
+    public Set getServersID(int fileID){
+    	return servers.fileLocations(fileID);
     }
     
     public int getServerID(int i) {
